@@ -1,46 +1,69 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Flutter from "./icons/Flutter.astro"
+import Django from "./icons/Django.astro"
+import React from "./icons/React.astro"
+import Vue from "./icons/Vue.astro"
+import Android from "./icons/Android.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#02569B] text-white",
+    icon: Flutter,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  DJANGO: {
+    name: "Django",
+    class: "bg-[#224336] text-white",
+    icon: Django,
   },
+  VUEJS: {
+    name: "Vue Js",
+    icon: Vue,
+  },
+  REACTJS: {
+    name: "React Js",
+    class: "bg-[#1c2c4c] text-white",
+    icon: React,
+  },
+  ANDROID: {
+    name: "Android",
+    class: "bg-[#04242c] text-white",
+    icon: Android
+  }
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Poke App",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "App desarrollada en Flutter y Django, utilizando el api PokeAPI, para mostrar una lista de pokemon por generacion.",
+    github: "https://github.com/wdavid73/poke-app",
+    image: "/projects/poke_app.jpeg",
+    tags: [TAGS.FLUTTER, TAGS.DJANGO],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Recipe Finder App",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "App para buscar, compartir y crear recetas. Creada desde cero con Flutter y Django.",
+      github: "https://github.com/wdavid73/recipe_finder_front",
+    image: "/projects/recipe_finder.jpg",
+    tags: [TAGS.FLUTTER, TAGS.DJANGO],
+  },
+  {
+    title: "Confma",
+    description:
+      "Webapp desarrollada para el negocio Confecciones Maribel para gestionar este teniendo la lista de client, prendas alquidades y sin alquilar, etc. Creada desde cero con ReactJs, Django y cuenta con una version independiente en Android.",
+      github: "https://github.com/wdavid73/confma_frontend",
+    image: "/projects/confma.jpeg",
+    tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.ANDROID],
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -73,12 +96,6 @@ const PROJECTS = [
               <GitHub class="size-6" />
               Code
               
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
             </LinkButton>
           )}
         </footer>
