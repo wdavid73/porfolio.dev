@@ -6,6 +6,8 @@ import Django from "./icons/Django.astro";
 import React from "./icons/React.astro";
 import Vue from "./icons/Vue.astro";
 import Android from "./icons/Android.astro";
+import Link from "./icons/Link.astro";
+import Code from "./icons/Code.astro";
 
 const TAGS = {
   FLUTTER: {
@@ -32,8 +34,22 @@ const TAGS = {
     class: "bg-[#04242c] text-white",
     icon: Android,
   },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-[#FFCA28] text-black",
+    icon: Code,
+  },
 };
 const PROJECTS = [
+  {
+    title: "Klero App",
+    description:
+      "Este es un proyecto base en Flutter diseñado como plantilla para futuros desarrollos. Contiene configuraciones y paquetes esenciales para iniciar rápidamente nuevos proyectos.",
+    github: "https://github.com/wdavid73/klero-app",
+    image: "/projects/klero_app.png",
+    tags: [TAGS.FLUTTER, TAGS.FIREBASE],
+    link: "#",
+  },
   {
     title: "Flutter Starter Kit",
     description:
@@ -71,7 +87,7 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, github }) => (
+    PROJECTS.map(({ image, title, description, tags, github, link }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -110,6 +126,12 @@ const PROJECTS = [
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
                   Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Try now
                 </LinkButton>
               )}
             </footer>
