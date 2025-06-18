@@ -8,6 +8,8 @@ import Vue from "./icons/Vue.astro";
 import Android from "./icons/Android.astro";
 import Link from "./icons/Link.astro";
 import Code from "./icons/Code.astro";
+import Firebase from "./icons/Firebase.astro";
+import Supabase from "./icons/Supabase.astro";
 
 const TAGS = {
   FLUTTER: {
@@ -36,11 +38,25 @@ const TAGS = {
   },
   FIREBASE: {
     name: "Firebase",
-    class: "bg-[#FFCA28] text-black",
-    icon: Code,
+    class: "bg-[#1c2c4c] text-white",
+    icon: Firebase,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-[#1c2c4c] text-white",
+    icon: Supabase,
   },
 };
 const PROJECTS = [
+  {
+    title: "Recipe Flow",
+    description:
+      "RecipeFlow es tu asistente culinario personal que simplifica la experiencia de cocinar. Con una interfaz intuitiva, puedes buscar rápidamente recetas por ingrediente o nombre, explorar una vasta colección y acceder a detalles claros como ingredientes, instrucciones paso a paso e imágenes apetitosas. Ya seas un chef experimentado o un principiante, RecipeFlow te guía sin esfuerzo a través del proceso de creación de platos deliciosos, haciendo que la preparación de tus comidas favoritas sea un verdadero placer.",
+    github: "https://github.com/wdavid73/recipe_flow",
+    image: "/projects/recipe_flow.png",
+    tags: [TAGS.FLUTTER, TAGS.SUPABASE],
+    link: "#",
+  },
   {
     title: "Klero App",
     description:
