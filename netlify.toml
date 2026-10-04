@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Netlify usaba Node 18 por defecto, y @astrojs/check no corre ahí
+  NODE_VERSION = "22"
