@@ -10,6 +10,7 @@ import Link from "./icons/Link.astro";
 import Code from "./icons/Code.astro";
 import Firebase from "./icons/Firebase.astro";
 import Supabase from "./icons/Supabase.astro";
+import System from "./icons/System.astro";
 
 const TAGS = {
   FLUTTER: {
@@ -61,6 +62,16 @@ const TAGS = {
     class: "bg-[#306998] text-white",
     icon: Code,
   },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#F7DF1E] text-black",
+    icon: Code,
+  },
+  DEVOPS: {
+    name: "DevOps",
+    class: "bg-[#1c2c4c] text-white",
+    icon: System,
+  },
 };
 const PROJECTS = [
   {
@@ -69,7 +80,7 @@ const PROJECTS = [
       "Servidor de Minecraft (Create+) autoadministrado en Oracle Cloud, con un dashboard propio de monitoreo y control construido desde cero. El backend en FastAPI expone estado en vivo, jugadores conectados, métricas de CPU/RAM y logs en tiempo real, protegido con sesión (bcrypt + cookie firmada) y comandos RCON restringidos a una whitelist exacta, nunca consola libre. Incluye backups automáticos fuera del VM, firewall en dos capas y despliegue continuo con GitHub Actions. El dashboard requiere login: sin sesión, todos los endpoints responden 401 y no se muestran datos.",
     github: "https://github.com/wdavid73/mc-create-plus-dashboard",
     image: "/projects/mc_create_plus_dashboard.webp",
-    tags: [TAGS.PYTHON],
+    tags: [TAGS.PYTHON, TAGS.JAVASCRIPT, TAGS.DEVOPS],
   },
   {
     title: "API Flow Studio",
